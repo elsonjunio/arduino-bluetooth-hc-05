@@ -32,4 +32,46 @@ After that, I restarted the module and ran the configuration mode, after a few s
 ![image info](./docs/images/scr.png)
 
 ---
+AT+PAIR=xyz,xy,xyzw,5
+AT+BIND=xyz,xy,xyzw
+AT+LINK=xyz,xy,xyzw
+
+```
+Serial: off
+Serial: conf+
+Serial: on
+---
+AT
+AT+UART - AT+UART=38400,0,0
+AT+RMAAD - Delete authenticated devices.
+AT+ROLE=1 - Set to master in order to enable scanning
+AT+CMODE=1 - Enable connect to any device
+AT+INQM=1,10,24 - RSSI. Max 10 devices, ~30s
+AT+PSWD="9999" - Password
+---
+Serial: conf-
+Serial: off
+Serial: on
+Serial: conf+
+---
+AT+STATE
+
+AT+INIT -- Does not work
+AT+INQ -- Does not work
+
+---
+After some secondes o serial:
++INQ:F4CE:23:06B93A,1A011C,FFC2
++INQ:F4CE:23:06B93A,1A011C,FFBB
+
+---
+AT+RNAME?F4CE,23,06B93A - Get device name
+
+AT+PAIR=F4CE,23,06B93A,5
+AT+BIND=F4CE,23,06B93A
+AT+LINK=F4CE,23,06B93A
+
+```
+
+---
 https://components101.com/wireless/hc-05-bluetooth-module
