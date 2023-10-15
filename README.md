@@ -30,3 +30,6 @@ During the tests, the AT+INQ and AT+INIT commands didn't work. This video gives 
 After that, I restarted the module and ran the configuration mode, after a few seconds the list of devices was displayed on the serial console.
 
 ![image info](./docs/images/scr.png)
+
+---
+https://components101.com/wireless/hc-05-bluetooth-module
